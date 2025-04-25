@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <img class="image-gradient" src="gradient.png" alt="bg" />
+    <div class="layer-blur"></div>
+
+    <div class="container">
+        <header>
+            <h1 data-aos="fade-down" data-aos-duration="1500" class="logo">Mew</h1>
+
+            <nav>
+                <a data-aos="fade-down" data-aos-duration="1500" href="index.html">Home</a>
+                <a data-aos="fade-down" data-aos-duration="2000" href="about.html">About</a>
+                <a data-aos="fade-down" data-aos-duration="2500" href="services.html">Services</a>
+                <a data-aos="fade-down" data-aos-duration="2500"
+                    href="mailto:adityapratap2301@gmail.com">Contact</a>
+                <a data-aos="fade-down" data-aos-duration="2500" href="gallery.html">Gallery</a>
+                <a data-aos="fade-down" data-aos-duration="2500" href="Portfolio/index.html">Portfolio</a>
+            </nav>
+
+            <button data-aos="fade-down" data-aos-duration="1500" class="btn-signing">
+                SIGNING
+            </button>
+        </header>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2 class="gallery-title">My Gallery</h2>
+                <div id="gallery-grid" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <div class="buttons-wrapper">
+            <div class="buttons">
+                <input type="file" id="image-input" accept="image/*" multiple style="display:none;" />
+                <button id="add-image-btn" class="btn">Add Image</button>
+                <button id="remove-all-btn" class="btn">Remove All</button>
+            </div>
+        </div>
+
+        <div id="image-modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img" />
+            <textarea id="caption" placeholder="Add a description..."></textarea>
+            <button id="save-description-btn" class="btn">Save Description</button>
+        </div>
+    </div>
+
+    <script>
+        let currentImageElement = null;
+
+        // Load images from localStorage with consideration for storage limits
+        function loadImages() {
+            const galleryGrid = document.getElementById("gallery-grid");
+            const images = JSON.parse(localStorage.getItem("galleryImages")) || [];
+            galleryGrid.innerHTML = "";
+            images.forEach((image, index) => {
+                const newImage = document.createElement("div");
+                newImage.className = "gallery-item";
+                newImage.dataset.index = index; // Store index for easy access
+                newImage.innerHTML = `
+                    <img src="${image.src}" alt="Gallery Image">
+                    <p class="description">${image.description}</p>
+                `;
+                galleryGrid.appendChild(newImage);
+            });
+            addModalFunctionality();
+            addCrossButton(); // Add cross button to existing images on load
+        }
+
+        // Save images to localStorage
+        function saveImages() {
+            const images = [];
+            document.querySelectorAll(".gallery-item").forEach((item) => {
+                const img = item.querySelector("img");
+                const desc = item.querySelector(".description");
+                images.push({ src: img.src, description: desc.textContent });
+            });
+            localStorage.setItem("galleryImages", JSON.stringify(images));
+        }
+
+        // Compress image data URLs to reduce size
+        function compressImage(src, quality, callback) {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                const ctx = canvas.getContext("2d");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                callback(canvas.toDataURL("image/jpeg", quality)); // Adjust quality as needed
+            };
+        }
+
+        // Add cross button to each gallery item
+        function addCrossButton() {
+            const images = document.querySelectorAll(".gallery-item");
+            images.forEach((image) => {
+                const crossBtn = document.createElement("button");
+                crossBtn.className = "remove-btn";
+                crossBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
+
+                crossBtn.onclick = function () {
+                    image.remove();
+                    saveImages(); // Save after removal
+                };
+
+                image.appendChild(crossBtn);
+            });
+        }
+
+        // Image button click event
+        document.getElementById("add-image-btn").addEventListener("click", function () {
+            document.getElementById("image-input").click();
+        });
+
+        // Handle file input change event
+        document.getElementById("image-input").addEventListener("change", function () {
+            const files = this.files;
+            if (files.length > 0) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        compressImage(e.target.result, 0.7, (compressedSrc) => {
+                            const galleryGrid = document.getElementById("gallery-grid");
+                            const newImage = document.createElement("div");
+                            newImage.className = "gallery-item";
+                            newImage.innerHTML = `
+                                <img src="${compressedSrc}" alt="Gallery Image">
+                                <p class="description"></p>
+                            `;
+                            galleryGrid.appendChild(newImage);
+                            addCrossButton(); // Add cross button to the new image
+                            saveImages(); // Save after each addition
+                            addModalFunctionality();
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+
+        // Remove All button click event
+        document.getElementById("remove-all-btn").addEventListener("click", function () {
+            const galleryGrid = document.getElementById("gallery-grid");
+            galleryGrid.innerHTML = ""; // Remove all images from the page
+            localStorage.removeItem("galleryImages"); // Clear images from local storage
+        });
+
+        // Modal functionality to gallery items
+        function addModalFunctionality() {
+            const modal = document.getElementById("image-modal");
+            const modalImg = document.getElementById("modal-img");
+            const captionText = document.getElementById("caption");
+            const saveBtn = document.getElementById("save-description-btn");
+            const closeBtn = document.getElementsByClassName("close")[0];
+
+            const images = document.querySelectorAll(".gallery-item img");
+            images.forEach(function (img) {
+                img.onclick = function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    currentImageElement = this.nextElementSibling;
+                    captionText.value = currentImageElement.textContent;
+                };
+            });
+
+            saveBtn.onclick = function () {
+                if (currentImageElement) {
+                    currentImageElement.textContent = captionText.value;
+                    saveImages();
+                }
+                modal.style.display = "none";
+            };
+
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
+        }
+
+        // Initialize on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            loadImages();
+            addCrossButton(); 
+            addModalFunctionality();
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
