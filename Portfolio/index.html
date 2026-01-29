@@ -2,200 +2,303 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVELOPER | Creative Engineer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
 
-        <nav class="navbar">
-            <a href="#home" style="--i: 1" class="active">Home</a>
-            <a href="#skills" style="--i: 3">Skills</a>
-            <a href="#project" style="--i: 4">Project</a>
-            <a href="#contact" style="--i: 5">Contact</a>
-        </nav>
-    </header>
-
-    <section class="home" id="home">
-        <div class="home_content">
-            <h3>Hello, I am</h3>
-            <h1>Aditya Pratap Singh</h1>
-            <h3>and I'm a <span class="text"></span></h3>
-            <p>
-                I'm a programmer and developer, design websites. <br />Expertise in
-                Frontend and Backend Development. <br />I'm a passionate developer who
-                loves to create and innovate.
-            </p>
-
-            <div class="home-sci">
-                <a href="https://www.facebook.com/profile.php?id=100015010113600" target="_blank" style="--i: 7"><i
-                        class="bx bxl-facebook"></i></a>
-                <a href="https://www.instagram.com/stud_addy_vans/" target="_blank" style="--i: 8"><i
-                        class="bx bxl-instagram"></i></a>
-                <a href="https://twitter.com/AdityaP88580062" target="_blank" style="--i: 9"><i
-                        class="bx bxl-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/aditya-pratap-singh-306a792b5/" target="_blank" style="--i: 10"><i
-                        class="bx bxl-linkedin"></i></a>
-
-            </div>
+    <!-- 1. ENTRY OVERLAY (Required for Audio) -->
+    <div id="start-screen">
+        <div class="loader-content">
+            <div class="terminal-text" id="boot-text">INITIALIZING SYSTEM...</div>
+            <button id="enter-btn" class="hidden">[ ENTER SYSTEM ]</button>
         </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="container">
-            <h1 class="sub-title">My <span>services</span></h1>
-            <div class="services-list">
-                <div>
-                    <i class="bx bx-crop" style="color: #00eeff;"></i>
-                    <h2>Web Designer</h2>
-                    <p>I craft engaging and user-friendly websites using modern front-end technologies. From responsive
-                        layouts to interactive elements, I bring your web design visions to life with clean and
-                        efficient code.</p>
-                    <a href="#contact" class="read">Contact</a>
-                </div>
-                <div>
-                    <i class="bx bxl-apple" style="color: #00eeff;"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>I focus on creating intuitive and visually appealing user interfaces and experiences. By
-                        understanding user needs and employing design principles, I aim to deliver seamless and
-                        enjoyable interactions.</p>
-                    <a href="#contact" class="read">Contact</a>
-                </div>
-                <div>
-                    <i class="bx bx-briefcase" style="color: #00eeff;"></i>
-                    <h2>Freelancing</h2>
-                    <p>Available for freelance projects, I offer my diverse skills to help you achieve your goals. Let's
-                        collaborate to bring your ideas to fruition with professional and dedicated service.
-                        <strong>Reach out to discuss your project needs.</strong>
-                    </p>
-                    <a href="#contact" class="read">Contact</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills-section">
-        <h1 class="section-title autoDisplay" id="skills">My Skills 💪</h1>
-
-        <div class="skills-box">
-            <img class="skills-image" src="images/digital brain.png" alt="skills-image">
-
-            <div class="designer autoDisplay">
-                <h1 class="gradient">Designer <i class='bx bx-laptop'></i></h1>
-                <p>I have expertise in HTML, CSS, JavaScript, and design tools like Figma and Adobe XD. My strength
-                    lies in blending aesthetics with functionality to create seamless user experiences.</p>
-            </div>
-
-            <div class="coder autoDisplay">
-                <h1 class="gradient">Coder <i class='bx bx-code-block'></i></h1>
-                <p>I'm skilled in HTML, CSS, JavaScript, and frameworks like React and Node.js. I also have
-                    experience with database management using MongoDB and MySQL.</p>
-            </div>
-
-            <div class="slider" reverse="true" style="
-                --width: 100px;
-                --height: 100px;
-                --quantity: 8;
-            ">
-                <div class="list">
-                    <div class="item" style="--position: 1;"><img src="images/1.png" alt="slider-img"></div>
-                    <div class="item" style="--position: 2;"><img src="images/2.png" alt="slider-img"></div>
-                    <div class="item" style="--position: 3;"><img src="images/3.png" alt="slider-img"></div>
-                    <div class="item" style="--position: 4;"><img src="images/4.png" alt="slider-img"></div>
-                    <div class="item" style="--position: 5;"><img src="images/5.png" alt="slider-img"></div>
-                    <div class="item" style="--position: 6;"><img src="images/6.png" alt="slider-img"></div>
-                    <div class="item" style="--position: 7;"><img src="images/7.png" alt="slider-img"></div>
-                    <div class="item" style="--position: 8;"><img src="images/8.png" alt="slider-img"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <div class="main-text" id="project">
-            <h2>Latest <span>Project</span></h2>
-
-            <div class="portfolio-content">
-
-                <div class="row">
-                    <img src="images/WorldClock.png" alt="World Clock App">
-                    <div class="layer">
-                        <h5>World Clock App</h5>
-                        <p>Interactive web clock for tracking time across 24+ global zones with real-time updates and
-                            responsive design.</p>
-                        <a href="https://stud-addy-vans.github.io/World-Clock/"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <img src="images/MyWebsite.png" alt="My Website">
-                    <div class="layer">
-                        <h5>My Website</h5>
-                        <p>Responsive personal website built with HTML, CSS, and JavaScript, achieving 90+ PageSpeed
-                            Insights score.</p>
-                        <a href="https://stud-addy-vans.github.io/MyWebsite/"><i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <img src="images/MovieLandingPage.png" alt="Movie Website Landing Page">
-                    <div class="layer">
-                        <h5>Animated Movie Landing Page</h5>
-                        <p>Responsive movie website landing page with smooth animations, achieving high positive user
-                            feedback.</p>
-                        <a href="https://github.com/stud-addy-vans/Movie-Landing-Page"><i
-                                class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="contact-text">
-            <h2>Contact <span>Me</span></h2>
-            <h4>Let's Collaborate on Your Next Project</h4>
-            <p>
-                I'm always open to new opportunities and discussions. Whether you have a project idea, a potential
-                collaboration, or simply a question, please feel free to reach out. I look forward to connecting!
-            </p>
-            <ul class="contact-list">
-                <li><i class='bx bxs-send'></i>adityapratap2301@gmail.com</li>
-                <li><i class='bx bxs-phone'></i>+917257834383</li>
-            </ul>
-            <div class="contact-icons">
-                <a href="https://www.facebook.com/profile.php?id=100015010113600" target="_blank" style="--i: 7"><i
-                        class="bx bxl-facebook"></i></a>
-                <a href="https://www.instagram.com/stud_addy_vans/" target="_blank" style="--i: 8"><i
-                        class="bx bxl-instagram"></i></a>
-                <a href="https://twitter.com/AdityaP88580062" target="_blank" style="--i: 9"><i
-                        class="bx bxl-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/aditya-pratap-singh-306a792b5/" target="_blank" style="--i: 10"><i
-                        class="bx bxl-linkedin"></i></a>
-
-            </div>
-        </div>
-        <div class="contact-form">
-            <form action="">
-                <input type="" placeholder="Enter Your Name" required>
-                <input type="email" placeholder="Enter Your Email" required>
-                <input type="" placeholder="Enter Your Subject">
-                <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message"></textarea>
-                <input type="submit" value="submit" class="send">
-            </form>
-        </div>
-    </section>
-
-    <div class="last-text">
-        <p>&copy; Developed with love by Aditya PS 2025</p>
     </div>
-    <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
+
+    <!-- 2. 3D CANVAS BACKGROUND -->
+    <canvas id="world"></canvas>
+
+    <!-- 3. UI LAYER -->
+    <nav>
+        <div class="logo sound-hover">A/PS-MEW<span class="blink">_</span></div>
+        <div class="status">
+            <span class="led"></span> SYSTEM ONLINE
+        </div>
+        <div class="menu-icon sound-hover" id="menu-toggle">/// MENU</div>
+    </nav>
+
+    <!-- Full Screen Navigation -->
+    <div class="nav-overlay">
+        <ul class="nav-links">
+            <li><a href="#hero" class="sound-hover nav-item" data-index="01">HOME</a></li>
+            <li><a href="#work" class="sound-hover nav-item" data-index="02">WORK</a></li>
+            <li><a href="#about" class="sound-hover nav-item" data-index="03">PROFILE</a></li>
+            <li><a href="#process" class="sound-hover nav-item" data-index="03">PROCESS</a></li>
+            <li><a href="#contact" class="sound-hover nav-item" data-index="04">CONTACT</a></li>
+        </ul>
+    </div>
+
+    <main id="smooth-wrapper">
+        <!-- HERO -->
+        <header id="hero">
+            <div class="hero-content">
+                <div class="label">CREATIVE ENGINEER</div>
+                <h1 class="glitch-wrapper">
+                    <span class="glitch" data-text="DIGITAL">FULL STACK</span>
+                    <br>
+                    <span class="glitch" data-text="REALITY">DEVELOPER</span>
+                </h1>
+                <p class="hero-desc">
+                    Constructing immersive web experiences <br> with mathematics & logic.
+                </p>
+            </div>
+            <div class="scroll-line"></div>
+        </header>
+
+        <div class="services-ticker">
+            <div class="ticker-track">
+                FULL STACK DEVELOPMENT /// UI/UX DESIGN /// PROBLEM SOLVING /// TECHNICAL
+                CONSULTING /// PROGRAMMER ///
+                FULL STACK DEVELOPMENT /// UI/UX DESIGN /// PROBLEM SOLVING /// TECHNICAL
+                CONSULTING /// PROGRAMMER ///
+            </div>
+        </div>
+
+        <!-- WORK -->
+        <section id="work">
+            <div class="section-title">
+                <span>// 01</span>
+                <h2>SELECTED_WORKS</h2>
+            </div>
+
+            <div class="work-list">
+                <!-- Project 1 -->
+                <a href="https://stud-addy-vans.github.io/World-Clock/" target="_blank" rel="noopener noreferrer"
+                    class="work-item sound-hover">
+                    <div class="work-meta">
+                        <span class="year">2024</span>
+                        <span class="cat">WEB APP</span>
+                    </div>
+                    <h3 class="work-title">World Clock</h3>
+                    <!-- Put your image path below (e.g., images/clock.jpg) -->
+                    <img src="./assets/worldclock.png" class="hover-reveal-img" alt="Project Preview">
+                    <div class="work-img-reveal"></div> <!-- Logic in CSS/JS -->
+                    <div class="work-img-reveal"></div> <!-- Logic in CSS/JS -->
+                </a>
+
+                <!-- Project 2 -->
+                <a href="https://github.com/stud-addy-vans/CampusConnect" target="_blank" rel="noopener noreferrer"
+                    class="work-item sound-hover">
+                    <div class="work-meta">
+                        <span class="year">2025</span>
+                        <span class="cat">E-LEARNING</span>
+                    </div>
+                    <h3 class="work-title">Campus Connect</h3>
+                    <!-- Put your image path below -->
+                    <img src="./assets/CampusConnect.png" class="hover-reveal-img" alt="Project Preview">
+                    <div class="work-img-reveal"></div> <!-- Logic in CSS/JS -->
+                    <div class="work-img-reveal"></div> <!-- Logic in CSS/JS -->
+                </a>
+
+                <!-- Project 3 -->
+                <a href="https://stud-addy-vans.github.io/Music-Visualizer/" target="_blank" rel="noopener noreferrer" class="work-item sound-hover">
+                    <div class="work-meta">
+                        <span class="year">2023</span>
+                        <span class="cat">TOOL</span>
+                    </div>
+                    <h3 class="work-title">Music Visualizer</h3>
+                    <!-- Put your image path below -->
+                    <img src="./assets/Music_V.png" class="hover-reveal-img" alt="Project Preview">
+                    <div class="work-img-reveal"></div> <!-- Logic in CSS/JS -->
+                    <div class="work-img-reveal"></div> <!-- Logic in CSS/JS -->
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="section-title">
+                <span>// 02</span>
+                <h2>PROFILE_DATA</h2>
+            </div>
+
+            <div class="about-container">
+
+                <!-- Left: Bio & Specs -->
+                <div class="about-text">
+                    <h3 class="bio-headline">
+                        I CODE AND <span class="highlight">DEVELOP</span>,<br>
+                        NOT JUST WEBSITES.
+                    </h3>
+                    <p class="bio-body">
+                        My background in engineering allows me to bridge the gap between creative design and technical
+                        logic. I build scalable, high-performance web applications that feel alive. Currently obsessed
+                        with GenAI and ML.
+                    </p>
+
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">CORE_LANG</span>
+                            <span class="spec-val">C++</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">FRAMEWORK</span>
+                            <span class="spec-val">React / Next.js</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">RENDER</span>
+                            <span class="spec-val">WebGL / Three.js</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">BACKEND</span>
+                            <span class="spec-val">Node / Python</span>
+                        </div>
+                    </div>
+
+                    <!-- Resume Button -->
+                    <a href="assets/Aditya_Pratap_Singh_2025_Resume.pdf" target="_blank"
+                        class="btn-download sound-hover">
+                        [ DOWNLOAD_CV ]
+                    </a>
+                </div>
+
+                <!-- Right: The Scanner Photo -->
+                <div class="about-visual">
+                    <div class="photo-frame">
+                        <!-- Put your image path here -->
+                        <img src="./assets/Mee.png" alt="Profile" class="profile-img">
+                        <div class="scan-line"></div>
+                        <div class="corner-borders"></div>
+                    </div>
+                    <div class="visual-caption">
+                        ID: A_PS // STATUS: ONLINE
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="about">
+            <div class="section-title">
+                <span>// 03</span>
+                <h2>CAPABILITIES</h2>
+            </div>
+            <div class="grid-stats">
+                <div class="stat-box sound-hover">
+                    <h4>Programmer</h4>
+                    <p>C++, Python</p>
+                </div>
+                <div class="stat-box sound-hover">
+                    <h4>Web Dev</h4>
+                    <p>HTML5, CSS, JAVASCRIPT, NODE JS</p>
+                </div>
+                <div class="stat-box sound-hover">
+                    <h4>DATABASE</h4>
+                    <p>SQL</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION -->
+        <section id="process">
+            <div class="section-title">
+                <span>// 04</span>
+                <h2>EXECUTION_PROTOCOL</h2>
+            </div>
+
+            <div class="process-grid">
+                <!-- Step 1: Reasoning & Logic -->
+                <div class="process-step sound-hover">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h3>LOGIC_ANALYSIS</h3>
+                        <p>Deconstructing the problem. I apply critical reasoning to break down complex requirements
+                            into clear, executable logic steps before writing a single line of code.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Design & Structure -->
+                <div class="process-step sound-hover">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h3>DESIGN_SYNTHESIS</h3>
+                        <p>Bridging aesthetics with functionality. I design intuitive interfaces (UI) and plan the data
+                            structure to ensure the user experience is seamless and logical.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Programming -->
+                <div class="process-step sound-hover">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h3>CORE_ENGINEERING</h3>
+                        <p>The build phase. Writing clean, efficient JavaScript/React code. I focus on modular
+                            programming and robust algorithms to solve the core technical challenges.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Optimization & Solving -->
+                <div class="process-step sound-hover">
+                    <div class="step-num">04</div>
+                    <div class="step-content">
+                        <h3>SOLUTION_REFINE</h3>
+                        <p>Rigorous debugging and optimization. I test edge cases, fix logic errors, and refine the
+                            performance to ensure the final application runs instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials">
+            <div class="section-title">
+                <span>// 05</span>
+                <h2>DATA_LOGS</h2>
+            </div>
+
+            <div class="reviews-container">
+                <!-- Review 1 -->
+                <div class="review-card sound-hover">
+                    <div class="card-header">
+                        <span class="source">SOURCE: CEO, FINTECH_CORP</span>
+                        <span class="status-badge">VERIFIED</span>
+                    </div>
+                    <p class="review-text">
+                        "The system architecture Mew built allowed us to scale to 1M users without latency. A true
+                        engineer."
+                    </p>
+                    <div class="review-rating">RATING: [★★★★★]</div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card sound-hover">
+                    <div class="card-header">
+                        <span class="source">SOURCE: DIRECTOR, ART_STUDIO</span>
+                        <span class="status-badge">VERIFIED</span>
+                    </div>
+                    <p class="review-text">
+                        "We needed a website that looked like the future. Mew delivered a masterpiece of WebGL
+                        interaction."
+                    </p>
+                    <div class="review-rating">RATING: [★★★★★]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="contact">
+            <div class="footer-cta">
+                <p>READY TO CONNECT?</p>
+                <a href="mailto:adityapratap2301@gmail.com" class="huge-mail sound-hover">HelloTo@FUTURE.com</a>
+            </div>
+            <div class="footer-bar">
+                <div>© 2025 APS</div>
+                <div>LOCAL_TIME: <span id="clock">00:00:00</span></div>
+            </div>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
